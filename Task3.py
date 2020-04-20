@@ -30,14 +30,9 @@ class Circle:
         return self.radius ** 2 * 3.14
 
     def do_intersect(self, circle):
-        p1 = self.center
-        p2 = circle.center
-        r_center = p1.dist(p2)
+        r_center = self.center.dist(circle.center)
         r_radius = self.radius + circle.radius
-        if r_center <= r_radius:
-            return True
-        else:
-            return False
+        return r_center <= r_radius
 
 
 circ1 = Circle(Point(0, 0), 2)
